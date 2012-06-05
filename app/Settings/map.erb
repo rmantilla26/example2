@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arroyos de Barranquilla</title>
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta charset="UTF-8">
+        <style type="text/css">
+            html, body, #map_canvas {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+        </style>
+        <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var map;
+            function initialize() {
+                
+                
+                var myOptions = {
+                    zoom: 16,
+                    center: new google.maps.LatLng(11.004166195754133, -74.80189135797116),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                
+                map = new google.maps.Map(document.getElementById('map_canvas'),
+                myOptions);
+                
+                
+               
+                
+                
+                //MARK WHERE I AM.
+                var myCoordinates = [
+                    new google.maps.LatLng(11.001228,-74.807771),
+                    new google.maps.LatLng(11.001228,-74.807771),
+                    new google.maps.LatLng(11.004114,-74.803908),
+                    new google.maps.LatLng(11.004998,-74.802599),
+                    new google.maps.LatLng(11.005735,-74.801655),
+                    new google.maps.LatLng(11.007652,-74.801548),
+                    new google.maps.LatLng(11.010453,-74.799467),
+                    new google.maps.LatLng(11.013444,-74.797342),
+                    new google.maps.LatLng(11.016161,-74.795261)
+                ];
+                var polyOptions = {
+                    path: myCoordinates,
+                    strokeColor: "#FF0000",
+                    strokeOpacity: 1,
+                    strokeWeight: 3
+                }
+                var it = new google.maps.Polyline(polyOptions);
+                it.setMap(map);
+                
+                
+                var myCoordinates = [
+                    new google.maps.LatLng(11.010664,-74.807299),
+                    new google.maps.LatLng(11.007821,-74.803737),
+                    new google.maps.LatLng(11.006978,-74.801698)
+                ];
+                var polyOptions = {
+                    path: myCoordinates,
+                    strokeColor: "#0000FF",
+                    strokeOpacity: 1,
+                    strokeWeight: 3
+                }
+                var it = new google.maps.Polyline(polyOptions);
+                it.setMap(map);
+                
+                var image = '/public/images/walking-tour.png';
+                var myLatLng = new google.maps.LatLng(11.004166195754133, -74.80189135797116);
+                var beachMarker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    icon: image
+                });
+
+                
+   
+
+            
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    </head>
+    <body>
+        <div id="map_canvas"></div>
+    </body>
+</html>

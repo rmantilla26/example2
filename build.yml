@@ -1,0 +1,24 @@
+#sdk: "C:/Ruby187/lib/ruby/gems/1.8/gems/rhodes-3.3.3"
+sdkversion: 3.3.3
+name: arroyos
+version: 1.0
+vendor: rhomobile
+build: debug
+bbver: 4.6
+applog: rholog.txt
+iphone:
+  configuration: Release
+  sdk: iphonesimulator5.0
+  provisionprofile:
+  codesignidentity:
+  entitlements:
+  BundleIdentifier: com.rhomobile.arroyos
+  BundleURLScheme: arroyos
+wp:
+  productid: '338a6f00-8ef3-012f-c431-00ff5e7f5d9a'
+symbian:
+  uid: '0xe0e5b561'
+android:
+  version: 2.3.3
+
+extensions: ["json", "another-extension"]
